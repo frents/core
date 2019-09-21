@@ -1,1 +1,3 @@
-# Code
+# Frents
+
+Kubernetes hackathon  

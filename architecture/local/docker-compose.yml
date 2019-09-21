@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.3.2
+    environment:
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+    networks:
+      - esnet
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.3.2
+    ports:
+      - 5601:5601
+    networks:
+      - esnet
+
+  apollo:
+    image: node:10
+    ports:
+      - 4000:4000
+    networks:
+      - esnet
+    working_dir: /root/apps/backend
+    entrypoint: yarn start
+    volumes:
+      - ../../backend:/root/apps/backend
+
+networks:
+  esnet:
