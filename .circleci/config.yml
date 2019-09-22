@@ -15,10 +15,10 @@ jobs:
           keys:
             - cache_packages_backend{{ checksum "./backend/package.json" }}
       - run:
-          name: [BE] Install
+          name: "[BE] Install"
           command: yarn --cwd ./backend install
       - run:
-          name: [BE] Run lint
+          name: "[BE] Run lint"
           command: yarn --cwd ./backend code:lint:check
       - save_cache:
           paths:
@@ -33,10 +33,10 @@ jobs:
           keys:
             - cache_packages_backend{{ checksum "./backend/package.json" }}
       - run:
-          name: [BE] Install
+          name: "[BE] Install"
           command: yarn --cwd ./backend install
       - run:
-          name: [BE] Run prettier
+          name: "[BE] Run prettier"
           command: yarn code:prettier:check
       - save_cache:
           paths:
