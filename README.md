@@ -11,7 +11,7 @@ Kubernetes hackathon
 If openssl is not installed: [generate it online](https://www.csfieldguide.org.nz/en/interactives/rsa-key-generator/)
 
 ```bash
-cd backend/static
+cd backend/assets
 openssl genpkey -algorithm RSA -out jwt_key.pem -pkeyopt rsa_keygen_bits:512
 openssl rsa -pubout -in jwt_key.pem -out jwt_key.pub
 ```
