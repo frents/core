@@ -34,7 +34,20 @@ export class JwtService implements IService {
     return jwt.sign(payload, this.privateKey, JwtService.getSignOptions(subject, expiresIn))
   }
 
+  public decodeToken(token: string) {
+    token = this.cleanupToken(token)
+    return jwt.decode(token)
+  }
+
   public verifyToken(token: string, options: JwtSignOptions) {
+    token = this.cleanupToken(token)
     return jwt.verify(token, this.publicKey, options)
+  }
+
+  protected cleanupToken(token): string {
+    if (token.includes('Bearer ')) {
+      return token.replace('Bearer ', '')
+    }
+    return token
   }
 }

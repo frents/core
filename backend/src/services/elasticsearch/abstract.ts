@@ -10,7 +10,8 @@ export abstract class AbstractRepository {
   public readonly indexTypeValidationSchema: Joi.Schema
   public readonly indexMap: object
 
-  constructor(protected readonly client: Client) {}
+  constructor(protected readonly client: Client) {
+  }
 
   public saveModel<T extends IModel>(model: ValidatedModel<T>, queryType: QUERY_TYPE): Promise<ApiResponse> {
     const { id, ...body } = model.value
@@ -32,6 +33,18 @@ export abstract class AbstractRepository {
       body,
       refresh,
     })
+  }
+
+  public async getById<T>(id: string): Promise<T> {
+    try {
+      const document = await this.client.get({ id: id, index: this.indexName })
+      if (document.body) {
+        return AbstractRepository.composeModelFromEsResult<T>(document.body)
+      }
+      return null
+    } catch (e) {
+      return null
+    }
   }
 
   public async findOneByField<T>(field: string, value: string): Promise<T> {

@@ -4,13 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node-dev ./index.ts",
+    "start": "ts-node-dev src/index.ts",
     "build": "tsc",
     "gqcodegen": "graphql-codegen --config codegen.yml",
     "test": "jest",
     "code:lint:check": "./node_modules/.bin/eslint ./src/**/*.ts",
     "code:prettier:fix": "yarn prettier --single-quote --trailing-comma es5 --write \"src/**/*.ts\"",
-    "code:prettier:check": "prettier --check \"src/**/*.ts\" --ignore-path \"src/graphql/generated/graphql.ts\""
+    "code:prettier:check": "prettier --check \"src/**/*.ts\" --ignore-path \"src/graphql/generated/graphql.ts\"",
+    "local:graphql:restart": "cd .. && cd architecture/local && docker-compose restart apollo"
   },
   "husky": {
     "hooks": {
@@ -29,6 +30,7 @@
     "dotenv": "^8.1.0",
     "graphql": "^14.5.7",
     "jsonwebtoken": "^8.5.1",
+    "redis": "^2.8.0",
     "uuid": "^3.3.3"
   },
   "devDependencies": {
