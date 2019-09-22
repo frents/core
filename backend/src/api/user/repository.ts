@@ -7,7 +7,6 @@ import { v4 } from 'uuid'
 
 @elasticSearchIndex(indexConfig)
 export class UserRepository extends AbstractRepository implements IRepository {
-
   public async createModel(user: Partial<User>): Promise<User> {
     const newUser = {
       id: v4(),

@@ -1,10 +1,5 @@
 import { AuthMutationResponse, InputAuth, SocialProvider, User } from '../../graphql/generated/graphql'
-import locator, {
-  AVAILABLE_SERVICES,
-  ElasticSearchService,
-  JwtService,
-  SocialClientService,
-} from '../../services/locator'
+import locator, { AVAILABLE_SERVICES, ElasticSearchService, JwtService, SocialClientService } from '../../services/locator'
 import { UserInputError } from 'apollo-server'
 import { UserRepository } from '../user/repository'
 import { USER_FIELDS } from '../user/types'

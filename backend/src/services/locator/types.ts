@@ -4,9 +4,7 @@ export enum AVAILABLE_SERVICES {
   JWT = 'JWT',
 }
 
-export interface IService {
-
-}
+export interface IService {}
 
 export interface IServiceLocator {
   register(service: IService, serviceKey: AVAILABLE_SERVICES, cache: boolean): void

@@ -17,7 +17,7 @@ export class ElasticSearchService implements IService {
     return new this(client)
   }
 
-  public getRepository<T extends IRepository>(repository: { new(client: Client): T }): T {
+  public getRepository<T extends IRepository>(repository: { new (client: Client): T }): T {
     if (!repository) {
       throw new Error(`getRepository: The repository - ${repository} - you are trying to pass in is - ${repository}`)
     }
@@ -37,9 +37,7 @@ export class ElasticSearchService implements IService {
   }
 
   public getRepositoryList(): IRepository[] {
-    return [
-      this.getRepository<UserRepository>(UserRepository),
-    ]
+    return [this.getRepository<UserRepository>(UserRepository)]
   }
 
   public async configureIndex(repository: IRepository, config: IConfigureRepository): Promise<any> {

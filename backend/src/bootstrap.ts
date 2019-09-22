@@ -6,12 +6,7 @@ import * as path from 'path'
 import { JwtService } from './services/jwt'
 
 export const validateEnv = (): void => {
-  const envs = [
-    'APP_ES_HOST',
-    'APP_STAGE',
-    'APP_FB_ID',
-    'APP_FB_SECRET',
-  ]
+  const envs = ['APP_ES_HOST', 'APP_STAGE', 'APP_FB_ID', 'APP_FB_SECRET']
   envs.forEach(validEnv => {
     if (!process.env[validEnv]) {
       throw new Error(`validateEnv: The env ${validEnv} is - ${process.env[validEnv]}`)

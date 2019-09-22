@@ -5,5 +5,5 @@ export enum USER_FIELDS {
   EMAIL = 'email',
   PROVIDER = 'provider',
   PROVIDER_ID = 'providerId',
-  CREATED_AT = 'createdAt'
+  CREATED_AT = 'createdAt',
 }

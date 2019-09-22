@@ -10,9 +10,7 @@ export abstract class AbstractRepository {
   public readonly indexTypeValidationSchema: Joi.Schema
   public readonly indexMap: object
 
-  constructor(protected readonly client: Client) {
-
-  }
+  constructor(protected readonly client: Client) {}
 
   public saveModel<T extends IModel>(model: ValidatedModel<T>, queryType: QUERY_TYPE): Promise<ApiResponse> {
     const { id, ...body } = model.value
@@ -37,7 +35,11 @@ export abstract class AbstractRepository {
   }
 
   public async findOneByField<T>(field: string, value: string): Promise<T> {
-    const { body } = await this.client.search({ body: bodybuilder().query('match', field, value).build() })
+    const { body } = await this.client.search({
+      body: bodybuilder()
+        .query('match', field, value)
+        .build(),
+    })
     if (body && body.hits && body.hits.total.value > 0) {
       return AbstractRepository.composeModelFromEsResult<T>(body.hits.hits[0])
     }
