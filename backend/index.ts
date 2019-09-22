@@ -1,6 +1,7 @@
-import { SchemaDefinition } from './src/schema'
+import './src/bootstrap'
+import { SchemaDefinition } from './src/graphql/schema'
 import { ApolloServer } from 'apollo-server'
-import { resolvers } from './src/resolvers'
+import { resolvers } from './src/graphql/resolvers'
 
 const server = new ApolloServer({ typeDefs: SchemaDefinition, resolvers })
 

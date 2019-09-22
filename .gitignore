@@ -3,3 +3,9 @@ node_modules
 build
 local.sh
 yarn-error.log
+.env
+graphql.gql
+graphql.schema.json
+test.ts
+backend/assets/*
+!backend/assets/.gitkeep

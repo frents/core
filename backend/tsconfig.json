@@ -21,6 +21,8 @@
     "**/*.spec.ts"
   ],
   "include": [
-    "./src"
+    "./scripts",
+    "./src",
+    "../types"
   ]
 }
