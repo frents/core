@@ -36,7 +36,7 @@ jobs:
           command: yarn --cwd ./backend install
       - run:
           name: "[BE] Run prettier"
-          command: yarn code:prettier:check
+          command: yarn --cwd ./backend code:prettier:check
       - save_cache:
           paths:
             - ./backend/node_modules
