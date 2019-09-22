@@ -18,7 +18,7 @@ export class UserRepository extends AbstractRepository implements IRepository {
     if (isValid.error) {
       throw new Error(isValid.error.message)
     }
-    await this.saveModel(isValid, QUERY_TYPE.CREATE).catch(e => console.log('e ::>', e))
+    await this.saveModel(isValid, QUERY_TYPE.CREATE)
     return newUser
   }
 }

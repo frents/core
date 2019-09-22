@@ -14,7 +14,7 @@ export abstract class AbstractRepository {
 
   }
 
-  public async saveModel<T extends IModel>(model: ValidatedModel<T>, queryType: QUERY_TYPE): Promise<ApiResponse> {
+  public saveModel<T extends IModel>(model: ValidatedModel<T>, queryType: QUERY_TYPE): Promise<ApiResponse> {
     const { id, ...body } = model.value
     const refresh = 'wait_for'
     const object = {
