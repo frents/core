@@ -12,6 +12,12 @@
     "code:prettier:fix": "yarn prettier --single-quote --trailing-comma es5 --write \"src/**/*.ts\"",
     "code:prettier:check": "prettier --check \"src/**/*.ts\" --ignore-path \"src/graphql/generated/graphql.ts\""
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn code:lint:check && yarn code:prettier:check",
+      "pre-push": "echo -e Prepush not enabled"
+    }
+  },
   "dependencies": {
     "@elastic/elasticsearch": "^7.3.0",
     "@hapi/joi": "^16.1.4",
@@ -46,6 +52,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "faker": "^4.1.0",
+    "husky": "^3.0.5",
     "jest": "^24.9.0",
     "prettier": "1.18.2",
     "ts-node": "^8.4.1",
