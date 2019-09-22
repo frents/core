@@ -2,7 +2,6 @@ version: 2.1
 
 project_base_path: &project_base_path /frents
 circleci_container: &circleci_container
-  working_directory: *project_base_path
   docker:
     - image: circleci/node:10
 
