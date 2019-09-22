@@ -5,7 +5,6 @@ import { readFileSync } from 'fs'
 import { JwtSignOptions } from './types'
 
 export class JwtService implements IService {
-
   protected privateKey: Buffer = null
   protected publicKey: Buffer = null
 

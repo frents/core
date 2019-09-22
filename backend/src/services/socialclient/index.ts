@@ -5,10 +5,7 @@ import { IFacebookValidatedToken } from './types'
 const FACEBOOK_API_HOST = 'https://graph.facebook.com'
 
 export class SocialClientService implements IService {
-
-  protected constructor(protected readonly facebookAppId, protected readonly facebookAppSecret) {
-
-  }
+  protected constructor(protected readonly facebookAppId, protected readonly facebookAppSecret) {}
 
   public static factory(facebookAppId: string, facebookAppSecret: string): SocialClientService {
     return new this(facebookAppId, facebookAppSecret)

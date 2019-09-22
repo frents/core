@@ -6,7 +6,6 @@ import { SocialClientService } from '../socialclient'
 export * from './types'
 
 export class Locator implements IServiceLocator {
-
   private readonly services: IService[]
 
   constructor() {
@@ -28,9 +27,5 @@ export class Locator implements IServiceLocator {
   }
 }
 
-export {
-  JwtService,
-  ElasticSearchService,
-  SocialClientService,
-}
+export { JwtService, ElasticSearchService, SocialClientService }
 export default new Locator()
