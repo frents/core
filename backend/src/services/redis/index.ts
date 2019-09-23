@@ -4,7 +4,6 @@ import * as Redis from 'redis'
 const { promisify } = require('util')
 
 export class RedisService implements IService {
-
   protected client: Redis
   public getAsync: (key: string) => Promise<string | null>
 
@@ -25,5 +24,4 @@ export class RedisService implements IService {
   public static factory(host: string) {
     return new this(host)
   }
-
 }

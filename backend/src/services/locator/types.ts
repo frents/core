@@ -2,11 +2,10 @@ export enum AVAILABLE_SERVICES {
   ELASTICSEARCH = 'ELASTICSEARCH',
   SOCIAL_CLIENT = 'SOCIAL_CLIENT',
   JWT = 'JWT',
-  REDIS = 'REDIS'
+  REDIS = 'REDIS',
 }
 
-export interface IService {
-}
+export interface IService {}
 
 export interface IServiceLocator {
   register(service: IService, serviceKey: AVAILABLE_SERVICES, cache: boolean): void

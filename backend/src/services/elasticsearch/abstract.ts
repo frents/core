@@ -10,8 +10,7 @@ export abstract class AbstractRepository {
   public readonly indexTypeValidationSchema: Joi.Schema
   public readonly indexMap: object
 
-  constructor(protected readonly client: Client) {
-  }
+  constructor(protected readonly client: Client) {}
 
   public saveModel<T extends IModel>(model: ValidatedModel<T>, queryType: QUERY_TYPE): Promise<ApiResponse> {
     const { id, ...body } = model.value
