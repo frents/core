@@ -29,7 +29,7 @@ export async function apolloContext({ req }) {
   const esUser = await ur.getById<User>(verifiedToken.userId)
   if (esUser && esUser.id) {
     redisService.set(esUser.id, esUser)
-    return { user }
+    return { user: esUser }
   }
 }
 
