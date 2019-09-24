@@ -40,7 +40,7 @@ INTEGRATION_DEFAULT_USER_TOKEN=""
 
 ```bash
 cd architecture/local
-docker-copose up
+docker-compose up
 ```
 
 **Configure ElasticSearch indexes**
