@@ -2,6 +2,7 @@ export enum AVAILABLE_SERVICES {
   ELASTICSEARCH = 'ELASTICSEARCH',
   SOCIAL_CLIENT = 'SOCIAL_CLIENT',
   JWT = 'JWT',
+  REDIS = 'REDIS',
 }
 
 export interface IService {}

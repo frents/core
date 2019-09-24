@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server'
 
-export const SchemaDefinition = gql`
+export const schemaDefinition = gql`
   enum SocialProvider {
     FACEBOOK
     GOOGLE

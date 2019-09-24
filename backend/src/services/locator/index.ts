@@ -2,6 +2,7 @@ import { AVAILABLE_SERVICES, IService, IServiceLocator } from './types'
 import { JwtService } from '../jwt'
 import { ElasticSearchService } from '../elasticsearch'
 import { SocialClientService } from '../socialclient'
+import { RedisService } from '../redis'
 
 export * from './types'
 
@@ -27,5 +28,5 @@ export class Locator implements IServiceLocator {
   }
 }
 
-export { JwtService, ElasticSearchService, SocialClientService }
+export { JwtService, ElasticSearchService, SocialClientService, RedisService }
 export default new Locator()

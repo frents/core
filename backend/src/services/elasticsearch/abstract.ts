@@ -34,6 +34,18 @@ export abstract class AbstractRepository {
     })
   }
 
+  public async getById<T>(id: string): Promise<T> {
+    try {
+      const document = await this.client.get({ id: id, index: this.indexName })
+      if (document.body) {
+        return AbstractRepository.composeModelFromEsResult<T>(document.body)
+      }
+      return null
+    } catch (e) {
+      return null
+    }
+  }
+
   public async findOneByField<T>(field: string, value: string): Promise<T> {
     const { body } = await this.client.search({
       body: bodybuilder()

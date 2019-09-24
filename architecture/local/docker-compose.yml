@@ -11,7 +11,7 @@ services:
     ports:
       - 9200:9200
     networks:
-      - esnet
+      - frents
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.3.2
@@ -19,7 +19,7 @@ services:
     ports:
       - 5601:5601
     networks:
-      - esnet
+      - frents
 
   apollo:
     image: node:10
@@ -27,11 +27,22 @@ services:
     ports:
       - 4000:4000
     networks:
-      - esnet
+      - frents
     working_dir: /root/apps/backend
     entrypoint: yarn start
     volumes:
       - ../../backend:/root/apps/backend
 
+  redis:
+    image: redis
+    container_name: redis
+    hostname: redis
+    ports:
+      - 6379:6379
+    networks:
+      - frents
+    expose:
+      - 6379
+
 networks:
-  esnet:
+  frents:
