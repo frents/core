@@ -1,0 +1,25 @@
+{
+  "short_name": "frents",
+  "name": "frents - an awesome app",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "frents_logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "frents_logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./suggest",
+  "display": "standalone",
+  "theme_color": "#ff0000",
+  "background_color": "#00ffff"
+}
