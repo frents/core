@@ -26,6 +26,8 @@ const ButtonsContainer = styled.div`
 
 export const LoginComponent = (props: ReactRouterProps) => {
   const [token, setToken] = useState("")
+  // Log is here because compiler complains about setToken not being used
+  console.log("setToken >>>", setToken)
 
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
@@ -37,7 +39,7 @@ export const LoginComponent = (props: ReactRouterProps) => {
     <StyledLogin>
       <Logo>frents</Logo>
       <ButtonsContainer>
-        <SocialButtons setToken={setToken} />
+        <SocialButtons />
       </ButtonsContainer>
     </StyledLogin>
   )
