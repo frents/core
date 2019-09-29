@@ -59,6 +59,6 @@ docker exec -it $(docker ps -f name=graphql -q) bash
 yarn test
 ```
 
-                **GraphQl Playground and GraphQl documentation**
+**GraphQl Playground and GraphQl documentation**
 
 Since the local service exposes GraphQlPlayground you can easily access to the GraphQl documentation opening this [link](http://localhost:4000)
