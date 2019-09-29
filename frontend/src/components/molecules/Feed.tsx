@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Feed as SemanticFeed, Icon, Image, Grid } from "semantic-ui-react"
 
 const images = [
